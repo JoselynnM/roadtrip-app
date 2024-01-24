@@ -1,14 +1,15 @@
-import React from "react";
+import React from 'react'
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-
+import { ChakraProvider, theme } from '@chakra-ui/react'
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import About from './pages/About.tsx';
 import Contact from "./pages/Contact.tsx";
 import Navbar from "./components/Navbar.tsx";
 import Home from "./pages/Home.tsx";
-import Search from './pages/Search.tsx';
+import Search from './pages/Search';
+
 
 
 const router = createBrowserRouter([
@@ -45,7 +46,12 @@ const router = createBrowserRouter([
 
       {
         path: "search",
-        element: <Search />,
+        element:
+        <React.StrictMode>
+        <ChakraProvider theme={theme}>
+          <Search />
+        </ChakraProvider>
+      </React.StrictMode>,
       },
       {
         path: "navbar",
