@@ -8,7 +8,7 @@ import About from './pages/About.tsx';
 import Contact from "./pages/Contact.tsx";
 import Navbar from "./components/Navbar.tsx";
 import Home from "./pages/Home.tsx";
-import Menu from './pages/Menu';
+import Search from './pages/Search.tsx';
 
 
 const router = createBrowserRouter([
@@ -44,8 +44,8 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "menu",
-        element: <Menu />,
+        path: "search",
+        element: <Search />,
       },
       {
         path: "navbar",

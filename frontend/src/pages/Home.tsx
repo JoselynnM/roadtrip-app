@@ -9,7 +9,7 @@ function Home() {
       <div className="headerContainer">
         <h1> Hitchhike? </h1>
         <p> START HERE!</p>
-        <Link to="/menu">
+        <Link to="/search">
           <button> SEARCH NOW </button>
         </Link>
       </div>
