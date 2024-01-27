@@ -2,6 +2,7 @@ import bcrypt from "bcrypt";
 import { User } from "../models/User.js";
 import jwt from "jsonwebtoken";
 
+
 export const register = async (req, res) => {
   try {
     const { password, email, ...userData } = req.body;
@@ -68,17 +69,9 @@ export const login = async (req, res) => {
       return res.status(401).json({ error: "Invalid credentials" });
     }
 
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "1h",
-    });
-
-    await User.findByIdAndUpdate(user._id, {
-      notificationToken: req.body.notificationToken,
-    });
-
     console.log("Login successful:", user);
 
-    res.status(200).json({ message: "Login successful", user, token });
+    res.status(200).json({ message: "Login successful", user });
   } catch (error) {
     console.error("Error in login:", error);
     res.status(500).json({ error: "Something went wrong" });

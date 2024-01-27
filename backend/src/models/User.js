@@ -19,7 +19,6 @@ const userSchema = new mongoose.Schema({
   role: {
     type: String,
   },
-
 });
 
 export const User = mongoose.model("User", userSchema);

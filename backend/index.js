@@ -2,7 +2,8 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import { userRouter } from "./src/routes/userRoute.js";
+import { userRouter } from "./src/routes/userRoutes.js";
+import { loggin } from "../backend/src/middleware/logins.js";
 
 
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
+app.use(loggin);
 
 
 const port = process.env.PORT || 3000;

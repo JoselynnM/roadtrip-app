@@ -114,7 +114,7 @@ const Register = () => {
                             Register
                         </Button> 
                         <Link to="/login" >
-                        <Button color="black" background="beige"  w="100%"  mt="4">Go to Sign In</Button>
+                        <Button background="grey" color="white" colorScheme="green"  w="100%"  mt="4">Go to Sign In</Button>
                     </Link>
                     </form>
                    
