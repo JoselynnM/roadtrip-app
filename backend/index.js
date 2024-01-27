@@ -19,7 +19,7 @@ app.use(cors());
 
 
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 
 // Routes test
 app.get("/", (req, res) => {

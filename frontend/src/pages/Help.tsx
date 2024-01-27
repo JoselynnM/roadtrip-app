@@ -27,7 +27,7 @@ const Help: React.FC = () => {
     display="flex"
     justifyContent="center"
     alignItems="center">
-    <Box p="4" maxW="800px" mx="auto" mt="4"  borderRadius="xl"  
+    <Box maxW="800px" mx="auto" mt="4"  borderRadius="xl"  
         bgColor="rgba(255, 255, 255, 0.8)"
         boxShadow="lg" p="6" m="9">
       <Heading as="h1" size="xl" textAlign="center" color="black" mb="4">

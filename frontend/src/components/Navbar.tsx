@@ -60,7 +60,7 @@ export default function Search() {
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
-          <Button as={'a'} fontSize={'md'} fontWeight={400}  href={'#'}>
+          <Button as={'a'} fontSize={'md'} fontWeight={400}  href={'Login'}>
             Sign In
           </Button>
           <Button
@@ -70,7 +70,7 @@ export default function Search() {
             fontWeight={600}
             color={'white'}
             bg={'green.400'}
-            href={'#'}
+            href={'register'}
             _hover={{
               bg: 'black',
             }}>
@@ -249,6 +249,6 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: 'Contact',
-    href: 'Contact', // Coloca aquí el enlace que desees
+    href: 'Contact', 
   },
 ]
