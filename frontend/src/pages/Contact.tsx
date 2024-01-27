@@ -18,7 +18,6 @@ import image from "../assets/bg13.jpg";
 function Contact() {
   return (
     <Box
-      className="contact"
       minH="100vh"
       backgroundImage={`url(${image})`}
       backgroundSize="cover"
