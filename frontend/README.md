@@ -1,8 +1,7 @@
-# Hitchhike Web 💻 🤓 
+# Hitchhike Web
 
 <p>
 In this archive you will find the source code for Hitchhike.</p>
- 
  ![alt text](./src/assets/image1.png)
  ![alt text](./src/assets/image2.png)
  ![alt text](./src/assets/image3.png)
@@ -14,7 +13,7 @@ In this archive you will find the source code for Hitchhike.</p>
 
 *GOOGLE DOC:*
 
-*FIGMA:* 
+*FIGMA:*
 https://www.figma.com/file/M8UkyJXDctD5wybLd45MQw/Untitled?type=design&node-id=0%3A1&mode=design&t=rzacFxYqZnWkfOMk-1
 
 ## Built with

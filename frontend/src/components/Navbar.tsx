@@ -181,7 +181,7 @@ const MobileNav = () => {
   )
 }
 
-const MobileNavItem = ({ label, children, href }: NavItem) => {
+const MobileNavItem = ({ label, href }: NavItem) => {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
