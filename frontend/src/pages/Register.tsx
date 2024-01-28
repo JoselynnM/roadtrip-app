@@ -64,18 +64,18 @@ const Register = () => {
                 boxShadow="lg"
             >
                 <VStack spacing="6">
-                    <Heading as="h1" size="2xl" textAlign="center">
+                    <Heading as="h1" size="2xl" textAlign="center" >
                         Register
                     </Heading>
                     <form onSubmit={handleSubmit}>
-                        <FormControl id="firstName" mt="4">
-                            <FormLabel>First Name</FormLabel>
+                        <FormControl id="firstName" mt="4" >
+                            <FormLabel >First Name</FormLabel>
                             <Input
                                 type="text"
                                 name="firstName"
                                 ref={firstNameRef}
-                                borderColor="black"
                                 focusBorderColor="green.400"
+                                borderColor="green.400"
                             />
                         </FormControl>
                         <FormControl id="lastName" mt="4" >
@@ -86,7 +86,7 @@ const Register = () => {
                                 id="lastname"
                                 ref={lastNameRef}
                                 focusBorderColor="green.400"
-                                borderColor="black"
+                                borderColor="green.400"
                             />
                         </FormControl>
                         <FormControl id="email"  mt="4" >
@@ -96,7 +96,7 @@ const Register = () => {
                                 name="email"
                                 ref={emailRef}
                                 focusBorderColor="green.400"
-                                borderColor="black"
+                                borderColor="green.400"
                             />
                         </FormControl>
                         <FormControl id="password"  mt="4">
@@ -106,7 +106,7 @@ const Register = () => {
                                 name="password"
                                 ref={passwordRef}
                                 focusBorderColor="green.400"
-                                borderColor="black"
+                                borderColor="green.400"
                             />
                         </FormControl>
 
