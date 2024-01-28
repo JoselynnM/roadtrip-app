@@ -43,13 +43,15 @@ export default function Search() {
           display={{ base: 'flex', md: 'none' }}>
           <IconButton
             onClick={onToggle}
-            icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />}
+            icon={isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5}  color="white"/>}
             variant={'ghost'}
             aria-label={'Toggle Navigation'}
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-  <Image src="/src/assets/HH.png" alt="Logo" boxSize="70px" w="" />
+        <a href="/">
+  <Image src="/src/assets/HH.png" alt="Logo" boxSize="70px" />
+</a>
   <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
     <DesktopNav />
   </Flex>
@@ -143,7 +145,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       display={'block'}
       p={2}
       rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
+      _hover={{ bg: useColorModeValue('green.50', 'green') }}>
       <Stack direction={'row'} align={'center'}>
         <Box>
           <Text

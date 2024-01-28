@@ -24,7 +24,7 @@ const center = { lat: 48.8584, lng: 2.2945 };
 
 function Search() {
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: `AIzaSyAcNrxg-PF9xIC7KBinHz6PDSO-vAWjClA`, 
+    googleMapsApiKey: `AIzaSyAcNrxg-PF9xIC7KBinHz6PDSO-vAWjClA`,
     libraries: ['places'],
   });
 
@@ -64,17 +64,73 @@ function Search() {
     if (originRef.current) originRef.current.value = '';
     if (destinationRef.current) destinationRef.current.value = '';
   }
-
   return (
     <Flex
-      position='relative'
       flexDirection='column'
       alignItems='center'
-      h='100vh'
-      w='100vw'
+      minHeight='100vh'
+      width='100%'
     >
-      <Box position='absolute' left={0} top={0} h='100%' w='100%'>
-        {/* Google Map Box */}
+      <Box width='100%' height='100vh' maxWidth='100vw' position='relative'>
+        {/* Búsqueda dentro del mapa */}
+        <Box
+          p={4}
+          borderRadius='lg'
+          m={4}
+          bgColor='white'
+          shadow='base'
+          width='90%'
+          maxWidth='400px' /* Limita el ancho en dispositivos pequeños */
+          position='absolute'
+          top='1rem'
+          left='1rem'
+          zIndex='1'
+        >
+          <HStack spacing={2} justifyContent='space-between'>
+            <Box flex={1}>
+              <Autocomplete>
+                <Input type='text' placeholder='Car' ref={originRef} />
+              </Autocomplete>
+            </Box>
+            <Box flex={1}>
+              <Autocomplete>
+                <Input
+                  type='text'
+                  placeholder='Destination'
+                  ref={destinationRef}
+                />
+              </Autocomplete>
+            </Box>
+  
+            <ButtonGroup>
+              <Button colorScheme='pink' type='submit' onClick={calculateRoute}>
+                Search car owner
+              </Button>
+              <IconButton
+                aria-label='center back'
+                icon={<FaTimes />}
+                onClick={clearRoute}
+              />
+            </ButtonGroup>
+          </HStack>
+          <HStack spacing={4} mt={4} justifyContent='space-between'>
+            <Text>Distance: {distance} </Text>
+            <Text>Duration: {duration} </Text>
+            <IconButton
+              aria-label='center back'
+              icon={<FaLocationArrow />}
+              isRound
+              onClick={() => {
+                if (map) {
+                  map.panTo(center);
+                  map.setZoom(15);
+                }
+              }}
+            />
+          </HStack>
+        </Box>
+  
+        {/* Mapa */}
         <GoogleMap
           center={center}
           zoom={15}
@@ -93,62 +149,7 @@ function Search() {
           )}
         </GoogleMap>
       </Box>
-      <Box
-        p={4}
-        borderRadius='lg'
-        m={4}
-        bgColor='white'
-        shadow='base'
-        minW='container.md'
-        zIndex='1'
-      >
-        <HStack spacing={2} justifyContent='space-between'>
-          <Box flexGrow={1}>
-            <Autocomplete>
-              <Input type='text' placeholder='Car' ref={originRef} />
-            </Autocomplete>
-          </Box>
-          <Box flexGrow={1}>
-            <Autocomplete>
-              <Input
-                type='text'
-                placeholder='Destination'
-                ref={destinationRef}
-              />
-            </Autocomplete>
-          </Box>
-
-          <ButtonGroup>
-            <Button colorScheme='pink' type='submit' onClick={calculateRoute}>
-              Search car owner
-  
-            </Button>
-            <IconButton
-              aria-label='center back'
-              icon={<FaTimes />}
-              onClick={clearRoute}
-            />
-          </ButtonGroup>
-        </HStack>
-        <HStack spacing={4} mt={4} justifyContent='space-between'>
-          <Text>Distance: {distance} </Text>
-          <Text>Duration: {duration} </Text>
-          <IconButton
-            aria-label='center back'
-            icon={<FaLocationArrow />}
-            isRound
-            onClick={() => {
-              if (map) {
-                map.panTo(center);
-                map.setZoom(15);
-              }
-            }}
-          />
-        </HStack>
-      </Box>
     </Flex>
   );
-}
-
+          }  
 export default Search;
-
