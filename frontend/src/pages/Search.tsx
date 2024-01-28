@@ -24,7 +24,7 @@ const center = { lat: 48.8584, lng: 2.2945 };
 
 function Search() {
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: `yoursecret`, 
+    googleMapsApiKey: `AIzaSyAcNrxg-PF9xIC7KBinHz6PDSO-vAWjClA`, 
     libraries: ['places'],
   });
 
