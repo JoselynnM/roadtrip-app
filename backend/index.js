@@ -6,8 +6,6 @@ import { userRouter } from "./src/routes/userRoutes.js";
 import { loggin } from "../backend/src/middleware/logins.js";
 
 
-
-
 dotenv.config();
 
 const mongoURI = process.env.MONGODB_URI;
@@ -17,6 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+
 
 app.use(loggin);
 
